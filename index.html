@@ -69,13 +69,27 @@
       color: #333;
       top: 100px;
       left: 20px;
-      transition: transform 0.3s ease; /* movimiento suave */
+      transition: transform 0.3s ease;
     }
 
     .note {
       font-size: 13px;
       color: #888;
       margin-top: 10px;
+    }
+
+    .coupon {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 20px;
+      color: #444;
+    }
+
+    .picnic {
+      max-width: 90%;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -100,12 +114,11 @@
     const yesBtn = document.getElementById("yes");
 
     function moveNo() {
-      const x = Math.random() * 250 - 100; // rango horizontal
-      const y = Math.random() * 150 - 50;  // rango vertical
+      const x = Math.random() * 250 - 100;
+      const y = Math.random() * 150 - 50;
       noBtn.style.transform = `translate(${x}px, ${y}px)`;
     }
 
-    // Detectar toque en móvil
     document.addEventListener("touchstart", (e) => {
       const rect = noBtn.getBoundingClientRect();
       const touch = e.touches[0];
@@ -116,7 +129,6 @@
       if (distance < 120) moveNo();
     });
 
-    // Detectar acercamiento del mouse en escritorio
     document.addEventListener("mousemove", (e) => {
       const rect = noBtn.getBoundingClientRect();
       const distance = Math.hypot(
@@ -126,13 +138,13 @@
       if (distance < 120) moveNo();
     });
 
-    // Acción al aceptar
     function accepted() {
       if (navigator.vibrate) navigator.vibrate(200);
       document.body.innerHTML = `
         <div style="
           height:100vh;
           display:flex;
+          flex-direction:column;
           justify-content:center;
           align-items:center;
           background:#ffccd5;
@@ -142,9 +154,13 @@
         ">
           <h1>
             💘 I knew it 💘<br><br>
-            Happy Valentine’s Day mon petit soleil, je t'aime ma vie🌻😘<br><br>
-            I miss you so much 🦆❤️
+            Happy Valentine’s Day mon petit soleil, je t'aime 🌻😘<br><br>
+            I miss you 🦆❤️
           </h1>
+          <div class="coupon">
+            🎟️ you win a coupon for a romantic date like this:
+          </div>
+          <img src="date.jpg" alt="Picnic in the mountains" class="picnic">
         </div>
       `;
     }
@@ -154,6 +170,4 @@
   </script>
 
 </body>
-
 </html>
-
