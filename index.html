@@ -80,16 +80,20 @@
 
     .coupon {
       text-align: center;
-      font-size: 18px;
+      font-size: 20px;
       margin-top: 20px;
       color: #444;
     }
 
+    .coupon span {
+      font-size: 36px; /* emoji más grande */
+    }
+
     .picnic {
-      max-width: 90%;
-      border-radius: 12px;
-      margin-top: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-width: 95%;   /* imagen más grande */
+      border-radius: 16px;
+      margin-top: 25px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
     }
   </style>
 </head>
@@ -158,9 +162,9 @@
             I miss you 🦆❤️
           </h1>
           <div class="coupon">
-            🎟️ you win a coupon for a romantic date like this:
+            <span>🎟️</span> This is your special coupon for a romantic date: sushi + Netflix 🍣📺
           </div>
-          <img src="date.jpg" alt="Picnic in the mountains" class="picnic">
+          <img src="picnic.jpg" alt="Romantic dinner" class="picnic">
         </div>
       `;
     }
